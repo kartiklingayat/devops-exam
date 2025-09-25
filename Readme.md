@@ -1,46 +1,146 @@
 # DevOps Assignment
 
+I’ll include:
+
+The step-by-step commands to run.
+
+The big answer for Readme.md with the definitions and reflection.
+
+How to save it manually in nano.
+
+1. Full Process to Execute the Assignment
+Step 1 — Create the directory and files
+cd ~
+mkdir exam
+cd exam
+nano Readme.md
+nano script.sh
+chmod +x script.sh
+
+Step 2 — Edit script.sh
+
+Paste this Windows-compatible script:
+
+#!/bin/bash
+
+# Print present working directory
+pwd
+
+# Print current user’s name
+whoami
+
+# Print available memory (Windows-friendly)
+systeminfo | grep "Available Physical Memory"
+
+# Print available disk space
+df -h
+
+# List all files in current directory
+ls -la
+
+# Print the contents of script.sh itself
+cat script.sh
+
+
+Save:
+
+Press CTRL + O → Enter → CTRL + X.
+
+Step 3 — Run the script and save output
+./script.sh > script.log
+
+Step 4 — Initialize Git and add GitHub remote
+git init
+git branch -M main
+git remote add origin https://github.com/kartiklingayat/devops-exam.git
+
+Step 5 — Create feature branch and commit files
+git checkout -b feature
+git add Readme.md script.sh script.log
+git commit -m "Added assignment files"
+git push origin feature
+
+Step 6 — Create and push master branch
+git checkout -b master
+git push -u origin master
+
+Step 7 — Switch back to feature branch
+git checkout feature
+
+2. Content to Add to Readme.md (Big Answer)
+
+Open Readme.md:
+
+nano Readme.md
+
+
+Paste this content:
+
+# DevOps Assignment
+
 ## Definitions
 
 **DevOps**  
-DevOps is a cultural and technical practice that unifies software development (Dev) and IT operations (Ops). Its goal is to shorten the development lifecycle while delivering features, fixes, and updates frequently, reliably, and in alignment with business objectives. DevOps promotes collaboration, automation, monitoring, and continuous improvement, ensuring that teams deliver value faster and more efficiently.
+DevOps is a methodology that bridges the gap between software development (Dev) and IT operations (Ops). It focuses on automating processes, improving collaboration between teams, and continuously delivering value. DevOps aims to reduce development cycles, increase deployment frequency, and ensure software reliability.
 
 **CI (Continuous Integration)**  
-Continuous Integration is the practice of frequently merging individual developers’ code changes into a shared repository, usually multiple times a day. Each merge triggers automated builds and tests, which help identify bugs or conflicts early. CI ensures that integration issues are caught quickly, making the codebase more stable and reliable.
+CI is a development practice where developers merge code changes into a shared repository frequently, triggering automated builds and tests. This early detection of integration issues improves code quality and accelerates the development process.
 
 **CD (Continuous Delivery/Deployment)**  
-- *Continuous Delivery* ensures that every change in the codebase is automatically tested and prepared for release to a staging or production environment. The final deployment still requires a manual approval step.  
-- *Continuous Deployment* extends this further by fully automating the release pipeline. Every change that passes automated tests is automatically deployed to production, minimizing manual intervention and speeding up the delivery process.
+- *Continuous Delivery* ensures that software is always in a releasable state, with changes tested and ready for deployment.  
+- *Continuous Deployment* automates this process further by deploying every successful change to production without manual intervention. CD increases the speed of delivering features to end-users.
 
 **Containerization**  
-Containerization involves packaging an application together with all of its dependencies (libraries, configurations, runtime) into lightweight, isolated units called containers. Containers ensure that applications run consistently across different environments, from a developer’s laptop to production servers. Tools like Docker and Kubernetes make containerization popular and scalable.
+Containerization packages an application along with its dependencies into a container that runs consistently across different computing environments. Tools like Docker and Kubernetes allow developers to create portable, isolated environments that work reliably regardless of where they are deployed.
 
 **Rollback**  
-Rollback is the process of reverting a system or application back to a previous stable state after a failed deployment or system error. In software development and DevOps, rollbacks are essential for minimizing downtime and ensuring business continuity. For example, in Git, if a new commit introduces errors, a developer can roll back to a stable commit. In deployment systems, rollback might mean reverting to a previously tested version of the application.
+Rollback is the process of reverting an application or system to a previous stable state when a new deployment causes errors or instability. In Git, rollback can mean reverting to a previous commit; in deployment pipelines, it might mean redeploying an earlier working version of the application to production.
 
 ---
 
 ## Reflection
 
-This assignment is more than just executing commands—it demonstrates DevOps principles in action:
+This assignment demonstrates key DevOps principles:
 
-- **Version Control & Collaboration (Core DevOps Practice)**  
-  By using Git and GitHub, I ensured all files (`Readme.md`, `script.sh`, `script.log`) are version-controlled. Creating a separate `feature` branch simulates a collaborative workflow where multiple developers can work safely without affecting the `main` branch. This aligns with DevOps practices of transparency, traceability, and rollback support.
+- **Version Control & Branching**: Using Git and GitHub to track changes and create branches (`feature`, `master`) is a key DevOps practice that promotes collaboration and rollback capability.  
+- **Automation**: The `script.sh` file automates system checks (directory, user, memory, disk space, files), reducing manual intervention and improving consistency.  
+- **CI/CD Thinking**: By committing and pushing to GitHub, we simulate a CI/CD process where changes are integrated, tested, and ready for deployment.  
+- **Rollback Capability**: If a branch or deployment causes issues, Git allows rolling back to previous commits or branches, ensuring stability and continuity.  
+- **Containerization Mindset**: Scripts like this, which package tasks into reusable code, reflect the containerization principle of packaging and automating work for consistent execution.
 
-- **CI/CD Thinking**  
-  Pushing files to GitHub represents the start of a CI/CD pipeline. Just as in CI, my changes are integrated into a shared repository. If GitHub Actions or Jenkins were added, tests could automatically validate my script. This simulates how real CI/CD pipelines continuously integrate and deliver code changes.
-
-- **Rollback Connection**  
-  Mistakes in this assignment could easily be undone using Git commands such as `git reset`, `git checkout`, or `git revert`. This mirrors rollback strategies in real-world deployments, where failed releases can be reverted to stable versions to protect availability.
-
-- **Automation (Heart of DevOps)**  
-  The `script.sh` file automates repetitive system checks such as memory, disk space, and directory listing. Instead of typing multiple commands manually, the script provides consistent results with a single execution. Automation is a key DevOps principle, as it reduces human error and saves time.
-
-- **Containerization Mindset**  
-  While I did not use Docker here, my script acts like a “mini-container” by encapsulating repeatable processes. In the same way containers bundle applications with dependencies, my script bundles useful commands to create predictable and portable outputs across different machines.
+Thus, this assignment ties together DevOps concepts — automation, version control, continuous integration, delivery, rollback, and consistency — into a single workflow.
 
 ---
 
-## Conclusion
+### Question & Answer Recap
 
-Through this assignment, I practiced **collaboration (GitHub branching), automation (bash scripting), CI/CD thinking (pushing code to a branch), and rollback handling (using Git to revert mistakes)**. These activities reflect the real-world DevOps lifecycle where code flows smoothly from development to deployment with minimal friction, rapid feedback, and high reliability.
+**Q:** In this file, write short definitions of the following terms in your own words:  
+- **DevOps**  
+- **CI (Continuous Integration)**  
+- **CD (Continuous Delivery/Deployment)**  
+- **Containerization**  
+- **Rollback**
+
+**A:** See above definitions in this file.  
+
+
+Save:
+
+Press CTRL + O → Enter → CTRL + X.
+
+Step 8 — Commit Readme.md changes
+git add Readme.md
+git commit -m "Added definitions and reflection for DevOps assignment"
+git push origin feature
+
+✅ Final GitHub Structure
+
+main → empty branch
+
+feature → contains:
+
+Readme.md
+
+script.sh
+
+script.log
