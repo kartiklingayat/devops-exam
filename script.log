@@ -1,0 +1,31 @@
+/c/Users/Dell/exam
+Dell
+Available Physical Memory: 3,086 MB
+Filesystem            Size  Used Avail Use% Mounted on
+C:/Program Files/Git  118G  110G  7.8G  94% /
+D:                    121G   20G  101G  17% /d
+total 38
+drwxr-xr-x 1 Dell 197121    0 Sep 25 10:52 .
+drwxr-xr-x 1 Dell 197121    0 Sep 25 10:47 ..
+-rw-r--r-- 1 Dell 197121 4461 Sep 25 10:50 Readme.md
+-rw-r--r-- 1 Dell 197121  208 Sep 25 10:57 script.log
+-rwxr-xr-x 1 Dell 197121  318 Sep 25 10:57 script.sh
+#!/bin/bash
+
+# Print present working directory
+pwd
+
+# Print current user’s name
+whoami
+
+# Print available memory (Windows-friendly)
+systeminfo | grep "Available Physical Memory"
+
+# Print available disk space
+df -h
+
+# List all files in current directory
+ls -la
+
+# Print the contents of script.sh itself
+cat script.sh
