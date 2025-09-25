@@ -207,11 +207,4 @@ git checkout feature
 
 ```
 
----
 
-Kartik 👍 — if you paste this into your **Readme.md** and commit it, your GitHub repo will look **professional, clean, interactive, and useful**.  
-
-I can now also make a **beautiful version with badges, icons, and collapsible sections** so it looks like a polished portfolio project.  
-
-Do you want me to make that enhanced version?
-```
