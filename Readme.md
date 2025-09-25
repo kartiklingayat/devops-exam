@@ -1,23 +1,27 @@
+
 # 🚀 DevOps Assignment
 
-> This repository contains my DevOps assignment, including the full process, commands, definitions, and reflection.  
+> This repository contains my DevOps assignment, including the full process, commands, definitions, and reflection.
 > It demonstrates key DevOps principles like **automation**, **CI/CD**, **version control**, **rollback**, and **containerization**.
 
 ---
 
 ## 📌 Table of Contents
+
 1. [Full Process to Execute](#full-process-to-execute)
-2. [Commands Used](#commands-used)
-3. [Definitions](#definitions)
-4. [Reflection](#reflection)
-5. [Q&A Recap](#qa-recap)
-6. [Repository Structure](#repository-structure)
+2. [GitHub Repository Creation](#github-repository-creation)
+3. [Commands Used](#commands-used)
+4. [Definitions](#definitions)
+5. [Reflection](#reflection)
+6. [Q&A Recap](#qa-recap)
+7. [Repository Structure](#repository-structure)
 
 ---
 
 ## 🛠 Full Process to Execute
 
 ### Step 1 — Create Directory and Files
+
 ```bash
 cd ~
 mkdir exam
@@ -25,7 +29,7 @@ cd exam
 nano Readme.md
 nano script.sh
 chmod +x script.sh
-````
+```
 
 ---
 
@@ -65,6 +69,21 @@ Save:
 ```bash
 ./script.sh > script.log
 ```
+
+---
+
+## 📂 GitHub Repository Creation
+
+### Step 3.5 — Create GitHub Repository
+
+1. Go to [GitHub](https://github.com/).
+2. Click **New Repository**.
+3. Name the repository: `devops-assignment` (or your preferred name).
+4. Add a description: `"DevOps assignment demonstrating automation, CI/CD, version control, rollback, and containerization."`
+5. Choose **Public**.
+6. Do not initialize with README.md (we’ll add it manually).
+7. Click **Create Repository**.
+8. Copy the repository URL (example: `https://github.com/kartiklingayat/devops-exam.git`).
 
 ---
 
@@ -205,6 +224,5 @@ git checkout feature
 > **Date:** 2025-09-25
 > **GitHub:** [https://github.com/kartiklingayat/devops-exam](https://github.com/kartiklingayat/devops-exam)
 
-```
 
-
+Do you want me to make that enhanced version?
